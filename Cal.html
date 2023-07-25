@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html> <head>
+    <title>3D Calculator</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: consolas;
+    }
+
+body{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background: #333;
+    }
+
+.calculator{
+    position: relative; 
+    width: 300px;
+
+    }
+
+    
+.calculator .buttons{
+    position: relative;
+    display: grid; 
+    }
+.calculator .buttons #value{ 
+    position: relative;
+    left: 8px;
+    margin-bottom: 12px;
+    grid-column: span 4;
+    height: 100px; 
+    line-height: 100px; 
+    padding: 0 20px; 
+    border-radius: 10px; 
+    background: #a7af7c; 
+    text-align: right; 
+    font-size: 1.5em;
+    color: #3a3c2e;
+    overflow: hidden; 
+    user-select: none;
+    width: calc(100% - 16px);
+    }
+
+.calculator .buttons span{ 
+    position: relative; 
+    padding : 10px;
+    margin : 6px;
+    min-width: 40px; 
+    font-size: 1.1em; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: #999;
+    border: 2px solid #222;
+    border-radius: 6px;
+    background: linear-gradient(#555353 , #363535);
+    cursor: pointer;
+    user-select: none; 
+    }
+
+.calculator .buttons span#clear{ 
+    grid-column: span 2; 
+    background: #f44336;
+    color: #fff;
+    }
+
+.calculator .buttons span#plus{ 
+    grid-row: span 2; 
+    background: #31a935;
+    color: #fff;
+    }
+
+.calculator .buttons span#equal{ 
+    grid-row: span 1;
+    background: #2196f3;
+    color: #fff;
+    }
+    </style>
+    <body>
+    <div class="calculator">
+    <div class="buttons">
+    <h2 id="value"></h2>
+    <span id="clear">Clear</span> <span>/</span>
+    <span>*</span>
+    <span>7</span>
+    <span>8</span>
+    <span>9</span>
+    <span>-</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span id="plus">+</span> <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>0</span> <span>00</span> <span>.</span>
+    <span id="equal">=</span>po
+     
+            </div>
+       </div>
+    <script>
+    let buttons = document.querySelector('.buttons'); let btn = buttons.querySelectorAll('span');
+    let value = document.getElementById('value');
+    for(let i= 0; i<btn.length ; i++){ btn[i].addEventListener('click' , function(){
+    if(this.innerHTML == '='){
+    value.innerHTML = eval(value.innerHTML);
+    }else{
+    if(this.innerHTML == 'Clear'){
+    value.innerHTML = ""; }else{
+    value.innerHTML += this.innerHTML; 
+       
+         }
+
+      }
+
+   })
+
+}
+</script> 
+</body>
+</html>
+
+     
